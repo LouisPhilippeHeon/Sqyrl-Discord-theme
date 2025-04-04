@@ -1,6 +1,6 @@
-# MinimalCordEdit
-An edit of Gibbu's MinimalCord theme
+# Sqyrl Discord Theme
+Now with modern CSS and made from scratch
 
 ## Instructions
-Télécharger `MinimalCordEdit.theme.css`\
-L'ajouter aux thèmes dans BetterDiscord
+Download `MinimalCordEdit.theme.css`\
+Add it to the themes in BetterDiscord
