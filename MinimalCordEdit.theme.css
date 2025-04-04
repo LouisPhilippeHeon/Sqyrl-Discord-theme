@@ -1,43 +1,315 @@
 /**
- * @name SERISET's MinimalCord
- * @author SERISET#1984
+ * @name Sqyrl
+ * @author SERISET
  * @version 1.0.0
- * @description Une modification de MinimalCord de Gibbu#1211 par SERISET#1984.
+ * @description A theme made for vertical screens that saves space by putting the server list in the titlebar.
 */
 
-@import url('https://discordstyles.github.io/HorizontalServerList/dist/HorizontalServerList.css');
-@import url('https://cdn.jsdelivr.net/gh/LouisPhilippeHeon/MinimalCordEdit@main/MinimalCord.css');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap');
 
 :root {
-  /* Couleur d'accent */
-  --accent: 40, 150, 204;
-  --accent-hover: #1e78a5;
-
-  /* Padding entre les messages, valeur en px, 10px par défaut */
-  --message-padding: 10px;
-  /* Espacement entre les messages, valeur en px, 9px par défaut */
-  --message-spacing: 9px;
-
-  /* Police de caractère */
-  --font: 'Roboto';
-
-  /* Taille des icones des serveurs, 40px par défaut */
-  --HSL-server-icon-size: 36px;
-
-  /* Distance qui sépare les serveurs, 10px par défaut */
-  --HSL-server-spacing: calc(2.6vw - 21px);
+  --server-bar-height: 56px;
+  --custom-app-top-bar-height:var(--server-bar-height);
+  --custom-guild-list-width: 2.4rem;
+  --primary-background: #171A1F;
+  --secondary-background: #131519;
+  --tertiary-background: #1b1f25;
+  --message: #1d2229;
+  --message-hover: #252b36;
+  --message-replying: #03304A;
+  --message-replying-hover: #05355A;
+  --message-mentionned: #0A2735;
+  --message-mentionned-hover: #0B2C40;
 }
 
-/* DÉCOMMENTER SI SUR MAC OS */
-
-/*
-.drag-2yz2Kd::before, .sidebarRegion-1VBisG::before { left: 80px; }
-.platform-osx .wrapper-1_HaEi { margin-top: 0px !important; }
-.base-2jDfDU { margin-top: -32px; }
-.scroller-1Bvpku, .wrapper-1_HaEi {
-  margin-left: 85px;
-  max-height: calc(100vw - 85px) !important;
-  max-width: 100%;
+/* Remove crap */
+.toolbar__9293f > .iconDisabled__9293f,
+.buttons__74017 > button:first-child,
+.buttons__74017 > div:nth-child(3),
+.buttons__74017 > div:nth-child(4) {
+  display: none;
 }
-*/
+
+/* Text color */
+body {
+  font-family: var("Roboto");
+}
+
+/* Base view */
+.visual-refresh .base_c48ade {
+  /* Titlebar without height */
+  grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
+}
+
+/* Title bar */
+.bar_c38106 {
+  background-color: var(--bg-base-tertiary);;
+  height: var(--server-bar-height);
+  padding-left: 0;
+  border: none;
+
+  /* Remove title */
+  .title_c38106 {
+    display: none;
+  }
+
+  /* Buttons at the end of title bar */
+  .trailing_c38106 {
+    position: absolute;
+    right: 0;
+
+    .winButton_c38106 {
+      width: 36px;
+    }
+
+    /* New notifications, help, seperator */
+    a, .recentsIcon_c99c29, ::before {
+      display: none;
+    }
+  }
+}
+
+/* App */
+.content_c48ade {
+  /* Servers and channels */
+  .sidebar_c48ade {
+    overflow: visible;
+
+    /* Hide the scrollbar */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Since the number of items before the separator might vary, nth-element can't be used to remove it */
+    .scroller_ef3116 > .stack_dbd263 {
+      transform: translateX(-16px);
+    }
+
+    /* Servers container */
+    .guilds_c48ade {
+      -webkit-app-region: no-drag;
+      position: absolute;
+      z-index: 1;
+      width: calc(100vw - (var(--custom-app-top-bar-height) * 3 + 36px));
+      max-width: fit-content;
+      overflow-x: auto;
+      padding-left: 16px;
+
+      /* Remove discover servers */
+      .scroller_ef3116 > .listItem__650eb:nth-last-child(2) {
+        display: none;
+      }
+
+      /* Sublists */
+      .stack_dbd263 {
+        flex-direction: row;
+        width: fit-content;
+        height: var(--server-bar-height);
+        column-gap: 16px !important;
+        padding-bottom: 0;
+
+        /* Separator */
+        .guildSeparator__252b6 {
+          display: none;
+        }
+
+        /* Server */
+        .listItem__650eb, .tutorialContainer__650eb, .tutorialContainer__1f388, .wrapper__48112 {
+          margin: auto;
+          width: fit-content;
+          flex-direction: column;
+
+          /* Pill indicating notification or current selection */
+          .pill__1f388, .pill_e5445c {
+            top: -6px;
+            width: 40px;
+            height: 2px;
+            display: flex;
+            justify-content: center;
+
+            .item__58105 {
+              transform: rotate(0.25turn) !important;
+            }
+          }
+        }
+
+        /* Move add server button */
+        .tutorialContainer__650eb {
+          transform: translateX(-16px);
+        }
+
+        /* Server folder */
+        .wrapper__48112 {
+          display: flex;
+          flex-direction: row;
+
+          /* Colored background */
+          .expandedFolderBackground__48112 {
+            width: 100%;
+            height: 40px;
+            top: 4px;
+          }
+
+          .folderIcon__48112 {
+            margin: 0;
+          }
+
+          /* Items of the folder */
+          ul {
+            align-items: center;
+            width: fit-content;
+            height: 48px !important;
+            padding: 0;
+
+            .listItem__650eb {
+              margin: 0;
+            }
+          }
+        }
+      }
+    }
+
+    /* Channels and convos */
+    .sidebarList_c48ade {
+      -webkit-app-region: no-drag;
+      overflow: visible;
+      position: relative;
+      width: var(--custom-guild-sidebar-width);
+      padding-top: var(--server-bar-height);
+
+      nav {
+        background-color: var(--primary-background);
+        /* TODO dont do it here because of gap */
+        padding-right: 6px;
+
+        /* Private messages */
+        .scroller__99e7c {
+          background-color: var(--primary-background);
+        }
+
+        /* Remove boost */
+        .container_eff079 {
+          display: none;
+        }
+      }
+    }
+
+    /* Resize bar */
+    .sidebarResizeHandle_c48ade {
+      margin-top: var(--server-bar-height);
+    }
+
+    .container__37e49 {
+      background-color: var(--secondary-background);
+    }
+  }
+
+  .sidebar_c48ade::after {
+    display: none;
+  }
+
+  /* Main page */
+  .page_c48ade {
+    top: var(--server-bar-height);
+    height: calc(100vh - var(--server-bar-height));
+
+    /* Bar at the top of the messages */
+    .title_f75fb0 {
+      background-color: var(--primary-background);
+    }
+
+    /* Chat and members*/
+    .content_f75fb0 {
+      border: none !important;
+
+      .chatContent_f75fb0 {
+        background-color: var(--primary-background);
+
+        /* First message of group */
+        .cozy_c19a55.groupStart__5126c {
+          margin-top: 8px;
+          padding-top: 8px;
+          padding-bottom: 8px;
+          border-radius: 12px 12px 0 0;
+        }
+
+        /* Last message of group */
+        :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55:not(.groupStart__5126c),
+        :has(+ div) > .cozy_c19a55:not(.groupStart__5126c) {
+          border-radius: 0 0 12px 12px;
+          padding-bottom: 12px;
+        }
+
+        /* Only message of the group */
+        :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55.groupStart__5126c,
+        :has(+ div) > .cozy_c19a55.groupStart__5126c {
+          border-radius: 12px;
+        }
+
+        .message__5126c {
+          background-color: var(--message);
+          transition: background-color 200ms;
+        }
+
+        .message__5126c:not(.replying__5126c, .mentioned__5126c):hover {
+          background-color: var(--message-hover) !important;
+        }
+
+        .message__5126c.replying__5126c {
+          background-color: var(--message-replying);
+        }
+
+        .message__5126c.replying__5126c:hover {
+          background-color: var(--message-replying-hover);
+        }
+
+        .message__5126c.mentioned__5126c {
+          background-color: var(--message-mentionned);
+        }
+
+        .message__5126c.mentioned__5126c:hover {
+          background-color: var(--message-mentionned-hover);
+        }
+
+        .message__5126c.cozy_c19a55.mentioned__5126c,
+        .message__5126c.cozy_c19a55.replying__5126c {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+
+        /* Divider */
+        .divider__5126c {
+          margin: 16px 0 16px 0;
+
+          span {
+            background-color: var(--secondary-background);
+          }
+        }
+
+        /* Message input */
+        .form_f75fb0 {
+          padding-left: 0;
+          padding-right: 16px;
+
+          .channelTextArea_f75fb0 {
+
+            .scrollableContainer__74017 {
+              background-color: var(--secondary-background);
+            }
+          }
+        }
+      }
+    }
+
+
+    /* Members */
+    .members_c8ffbb {
+      /* background-color: var(--secondary-background); */
+    }
+  }
+}
+
+/* Image preview */
+.carouselModal_d3a6f0 {
+  margin-top: 64px;
+}
