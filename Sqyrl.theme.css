@@ -9,17 +9,19 @@
 
 :root {
   --server-bar-height: 56px;
-  --custom-app-top-bar-height:var(--server-bar-height);
-  --custom-guild-list-width: 2.4rem;
+
   --primary-background: #171A1F;
   --secondary-background: #131519;
-  --tertiary-background: #1b1f25;
+  --tertiary-background: #181b22;
+  
   --message: #1d2229;
   --message-hover: #252b36;
   --message-replying: #03304A;
   --message-replying-hover: #05355A;
   --message-mentionned: #0A2735;
   --message-mentionned-hover: #0B2C40;
+
+  --transition-background: background-color 0.2s linear;
 }
 
 /* Remove crap */
@@ -90,7 +92,7 @@ body {
       -webkit-app-region: no-drag;
       position: absolute;
       z-index: 1;
-      width: calc(100vw - (var(--custom-app-top-bar-height) * 3 + 36px));
+      width: calc(100vw - (var(--server-bar-height) * 3 + 36px));
       max-width: fit-content;
       overflow-x: auto;
       padding-left: 16px;
@@ -174,17 +176,22 @@ body {
       -webkit-app-region: no-drag;
       overflow: visible;
       position: relative;
+      border: none;
       width: var(--custom-guild-sidebar-width);
       padding-top: var(--server-bar-height);
 
       nav {
         background-color: var(--primary-background);
-        /* TODO dont do it here because of gap */
-        padding-right: 6px;
 
-        /* Private messages */
-        .scroller__99e7c {
+        /* Channels, private messages */
+        .scroller__629e4, .scroller__99e7c {
           background-color: var(--primary-background);
+          margin-right: 6px;
+        }
+
+        /* Header */
+        .container_f37cb1  {
+          border-top: 1px solid var(--border-subtle);
         }
 
         /* Remove boost */
@@ -199,7 +206,8 @@ body {
       margin-top: var(--server-bar-height);
     }
 
-    .container__37e49 {
+    /* Profile */
+    .panels_c48ade {
       background-color: var(--secondary-background);
     }
   }
@@ -218,80 +226,104 @@ body {
       background-color: var(--primary-background);
     }
 
-    /* Chat and members*/
-    .content_f75fb0 {
-      border: none !important;
+    /* Everything to the left of the channels */
+    .chat_f75fb0 {
+      border: none;
+      background-color: var(--primary-background);
 
-      .chatContent_f75fb0 {
-        background-color: var(--primary-background);
+      /* Action bar */
+      .subtitleContainer_f75fb0 {
+        border-top: 1px solid var(--border-subtle);
+      }
 
-        /* First message of group */
-        .cozy_c19a55.groupStart__5126c {
-          margin-top: 8px;
-          padding-top: 8px;
-          padding-bottom: 8px;
-          border-radius: 12px 12px 0 0;
-        }
+      /* Chat and members*/
+      .content_f75fb0 {
+        border: none !important;
 
-        /* Last message of group */
-        :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55:not(.groupStart__5126c),
-        :has(+ div) > .cozy_c19a55:not(.groupStart__5126c) {
-          border-radius: 0 0 12px 12px;
-          padding-bottom: 12px;
-        }
+        .chatContent_f75fb0 {
+          background-color: var(--primary-background);
 
-        /* Only message of the group */
-        :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55.groupStart__5126c,
-        :has(+ div) > .cozy_c19a55.groupStart__5126c {
-          border-radius: 12px;
-        }
-
-        .message__5126c {
-          background-color: var(--message);
-          transition: background-color 200ms;
-        }
-
-        .message__5126c:not(.replying__5126c, .mentioned__5126c):hover {
-          background-color: var(--message-hover) !important;
-        }
-
-        .message__5126c.replying__5126c {
-          background-color: var(--message-replying);
-        }
-
-        .message__5126c.replying__5126c:hover {
-          background-color: var(--message-replying-hover);
-        }
-
-        .message__5126c.mentioned__5126c {
-          background-color: var(--message-mentionned);
-        }
-
-        .message__5126c.mentioned__5126c:hover {
-          background-color: var(--message-mentionned-hover);
-        }
-
-        .message__5126c.cozy_c19a55.mentioned__5126c,
-        .message__5126c.cozy_c19a55.replying__5126c {
-          border-top-left-radius: 0 !important;
-          border-bottom-left-radius: 0 !important;
-        }
-
-        /* Divider */
-        .divider__5126c {
-          margin: 16px 0 16px 0;
-
-          span {
-            background-color: var(--secondary-background);
+          /* First message of group */
+          .cozy_c19a55.groupStart__5126c {
+            margin-top: 8px;
+            padding-top: 8px;
+            padding-bottom: 8px;
+            border-radius: 12px 12px 0 0;
           }
-        }
 
-        /* Message input */
-        .form_f75fb0 {
-          padding-left: 0;
-          padding-right: 16px;
+          /* Last message of group */
+          :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55:not(.groupStart__5126c),
+          :has(+ div) > .cozy_c19a55:not(.groupStart__5126c) {
+            border-radius: 0 0 12px 12px;
+            padding-bottom: 12px;
+          }
 
-          .channelTextArea_f75fb0 {
+          /* Only message of the group */
+          :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55.groupStart__5126c,
+          :has(+ div) > .cozy_c19a55.groupStart__5126c {
+            border-radius: 12px;
+          }
+
+          .message__5126c {
+            background-color: var(--message);
+            transition: var(--transition-background);
+
+            /* Message accessories */
+            /* Attachments, embeds, linked message, reaction, add reaction */
+            .file__0ccae, .embedWrapper_b7e1cb, .container__9271d, .reaction__23977, .reactionBtn__23977  {
+              background-color: var(--tertiary-background);
+            }
+          }
+
+          .message__5126c:not(.replying__5126c, .mentioned__5126c):hover {
+            background-color: var(--message-hover) !important;
+          }
+
+          .message__5126c.replying__5126c {
+            background-color: var(--message-replying);
+          }
+
+          .message__5126c.replying__5126c:hover {
+            background-color: var(--message-replying-hover);
+          }
+
+          .message__5126c.mentioned__5126c {
+            background-color: var(--message-mentionned);
+          }
+
+          .message__5126c.mentioned__5126c:hover {
+            background-color: var(--message-mentionned-hover);
+          }
+
+          .message__5126c.cozy_c19a55.mentioned__5126c,
+          .message__5126c.cozy_c19a55.replying__5126c {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+          }
+
+          /* Divider */
+          .divider__5126c {
+            margin: 16px 0 16px 0;
+
+            .content__908e2 {
+              background-color: var(--secondary-background);
+            }
+          }
+
+          /* Divider before group */
+          .beforeGroup__5126c {
+            top: 0;
+          }
+
+          /* Message input */
+          .form_f75fb0 {
+            padding-left: 0;
+            padding-right: 16px;
+
+            /* Replying to */
+            .stackedBars__74017 {
+              background-color: var(--tertiary-background);
+            }
 
             .scrollableContainer__74017 {
               background-color: var(--secondary-background);
@@ -301,10 +333,23 @@ body {
       }
     }
 
+    /* Members container */
+    .container_c8ffbb {
+      border: none;
 
-    /* Members */
-    .members_c8ffbb {
-      /* background-color: var(--secondary-background); */
+      /* Members */
+      .members_c8ffbb {
+        background-color: var(--primary-background);
+
+        .member__5d473 {
+          background-color: var(--secondary-background);
+          margin: 4px 2px 4px 2px;
+          
+          .memberInner__5d473 {
+            padding: px 0 6px 2px;
+          }
+        }
+      }
     }
   }
 }
