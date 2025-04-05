@@ -358,3 +358,13 @@ body {
 .carouselModal_d3a6f0 {
   margin-top: 64px;
 }
+
+/* Popups container */
+.notAppAsidePanel_a3002d {
+  /* Profile */
+  .outer_c0bea0:not(.custom-profile-theme) {
+    .inner_c0bea0 {
+      background-color: var(--tertiary-background);
+    }
+  }
+}
