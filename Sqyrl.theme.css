@@ -10,6 +10,7 @@
 :root {
   --server-bar-height: 56px;
 
+  --accent: #327391;
   --primary-background: #171A1F;
   --secondary-background: #131519;
   --tertiary-background: #181b22;
@@ -47,8 +48,6 @@ body {
 .bar_c38106 {
   background-color: var(--bg-base-tertiary);;
   height: var(--server-bar-height);
-  padding-left: 0;
-  border: none;
 
   /* Remove title */
   .title_c38106 {
@@ -82,7 +81,7 @@ body {
       display: none;
     }
 
-    /* Since the number of items before the separator might vary, nth-element can't be used to remove it */
+    /* Since the number of items before the separator varies, nth-element can't be used to remove it */
     .scroller_ef3116 > .stack_dbd263 {
       transform: translateX(-16px);
     }
@@ -236,119 +235,134 @@ body {
         border-top: 1px solid var(--border-subtle);
       }
 
-      /* Chat and members*/
-      .content_f75fb0 {
-        border: none !important;
+      /* Chat */
+      .chatContent_f75fb0 {
+        background-color: transparent;
 
-        .chatContent_f75fb0 {
+        /* First message of group, if a message is either tagged as such preceded by a divider */
+        .cozy_c19a55.groupStart__5126c,
+        div + li > .cozy_c19a55 {
+          margin-top: 10px;
+          padding-top: 8px;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+        }
+
+        /* Last message of group, followed by either a first message of a group or a divider */
+        :is(:has(+ li > .cozy_c19a55.groupStart__5126c), :has(+ div)) > .cozy_c19a55 {
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+          padding-bottom: 10px;
+        }
+
+        /* Mentionned or replying to */
+        .cozy_c19a55:is(.mentioned__5126c, .replying__5126c) {
+          border-top-left-radius: 0 !important;
+          border-bottom-left-radius: 0 !important;
+        }
+
+        .message__5126c {
+          border-radius: 0;
+          background-color: var(--message);
+          transition: var(--transition-background);
+
+          /* Message accessories */
+          /* Attachments, embeds, linked message, reaction, add reaction */
+          .file__0ccae, .embedWrapper_b7e1cb, .container__9271d, .reaction__23977, .reactionBtn__23977  {
+            background-color: var(--tertiary-background);
+          }
+        }
+
+        .message__5126c:hover {
+          background-color: var(--message-hover);
+        }
+
+        .message__5126c.mentioned__5126c {
+          background-color: var(--message-mentionned);
+        }
+
+        .message__5126c.mentioned__5126c:hover {
+          background-color: var(--message-mentionned-hover);
+        }
+
+        .message__5126c.replying__5126c {
+          background-color: var(--message-replying);
+        }
+
+        .message__5126c.replying__5126c:hover {
+          background-color: var(--message-replying-hover);
+        }
+
+        .message__5126c::before {
+          background-color: var(--accent);
+        }
+
+        /* Divider */
+        .divider__5126c {
+          margin: 16px 0 16px 0;
+
+          .content__908e2 {
+            background-color: var(--secondary-background);
+          }
+        }
+
+        /* Message input */
+        .form_f75fb0 {
+          padding-left: 0;
+          padding-right: 16px;
+
+          /* Replying to */
+          .stackedBars__74017 {
+            background-color: var(--tertiary-background);
+          }
+
+          .scrollableContainer__74017 {
+            background-color: var(--secondary-background);
+          }
+        }
+      }
+
+      /* Members */
+      .container_c8ffbb {
+        border: none;
+
+        /* Members */
+        .members_c8ffbb {
           background-color: var(--primary-background);
 
-          /* First message of group */
-          .cozy_c19a55.groupStart__5126c {
-            margin-top: 8px;
-            padding-top: 8px;
-            padding-bottom: 8px;
-            border-radius: 12px 12px 0 0;
-          }
-
-          /* Last message of group */
-          :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55:not(.groupStart__5126c),
-          :has(+ div) > .cozy_c19a55:not(.groupStart__5126c) {
-            border-radius: 0 0 12px 12px;
-            padding-bottom: 12px;
-          }
-
-          /* Only message of the group */
-          :has(+ li > .cozy_c19a55.groupStart__5126c) > .cozy_c19a55.groupStart__5126c,
-          :has(+ div) > .cozy_c19a55.groupStart__5126c {
-            border-radius: 12px;
-          }
-
-          .message__5126c {
-            background-color: var(--message);
-            transition: var(--transition-background);
-
-            /* Message accessories */
-            /* Attachments, embeds, linked message, reaction, add reaction */
-            .file__0ccae, .embedWrapper_b7e1cb, .container__9271d, .reaction__23977, .reactionBtn__23977  {
-              background-color: var(--tertiary-background);
-            }
-          }
-
-          .message__5126c:not(.replying__5126c, .mentioned__5126c):hover {
-            background-color: var(--message-hover) !important;
-          }
-
-          .message__5126c.replying__5126c {
-            background-color: var(--message-replying);
-          }
-
-          .message__5126c.replying__5126c:hover {
-            background-color: var(--message-replying-hover);
-          }
-
-          .message__5126c.mentioned__5126c {
-            background-color: var(--message-mentionned);
-          }
-
-          .message__5126c.mentioned__5126c:hover {
-            background-color: var(--message-mentionned-hover);
-          }
-
-          .message__5126c.cozy_c19a55.mentioned__5126c,
-          .message__5126c.cozy_c19a55.replying__5126c {
-            border-top-left-radius: 0 !important;
-            border-bottom-left-radius: 0 !important;
-          }
-
-          /* Divider */
-          .divider__5126c {
-            margin: 16px 0 16px 0;
-
-            .content__908e2 {
-              background-color: var(--secondary-background);
-            }
-          }
-
-          /* Divider before group */
-          .beforeGroup__5126c {
-            top: 0;
-          }
-
-          /* Message input */
-          .form_f75fb0 {
-            padding-left: 0;
-            padding-right: 16px;
-
-            /* Replying to */
-            .stackedBars__74017 {
-              background-color: var(--tertiary-background);
-            }
-
-            .scrollableContainer__74017 {
-              background-color: var(--secondary-background);
+          .member__5d473 {
+            background-color: var(--secondary-background);
+            margin: 4px 2px 4px 2px;
+            
+            .memberInner__5d473 {
+              padding: px 0 6px 2px;
             }
           }
         }
       }
     }
 
-    /* Members container */
-    .container_c8ffbb {
-      border: none;
+    /* Friends */
+    /* TODO rethink color choices */
+    .tabBody__133bf  {
+      background-color: var(--primary-background);
+        
+      /* Friend */
+      .peopleListItem_cc6179 {
+        background-color: var(--message);
+        transition: var(--transition-background);
+        margin: 0 4px 6px 20px;
+        padding: 0 24px;
+        border-radius: 12px;
+        border: none;
 
-      /* Members */
-      .members_c8ffbb {
-        background-color: var(--primary-background);
-
-        .member__5d473 {
-          background-color: var(--secondary-background);
-          margin: 4px 2px 4px 2px;
-          
-          .memberInner__5d473 {
-            padding: px 0 6px 2px;
-          }
+        .avatar__0a06e {
+          margin: auto 12px auto 0;
         }
+      }
+
+      .peopleListItem_cc6179:hover {
+        background-color: var(--message-hover);
       }
     }
   }
@@ -359,12 +373,7 @@ body {
   margin-top: 64px;
 }
 
-/* Popups container */
-.notAppAsidePanel_a3002d {
-  /* Profile */
-  .outer_c0bea0:not(.custom-profile-theme) {
-    .inner_c0bea0 {
-      background-color: var(--tertiary-background);
-    }
-  }
+/* Profile popup */
+.outer_c0bea0:not(.custom-profile-theme) > .inner_c0bea0 {
+  background-color: var(--tertiary-background);
 }
