@@ -81,11 +81,6 @@ body {
       display: none;
     }
 
-    /* Since the number of items before the separator varies, nth-element can't be used to remove it */
-    .scroller_ef3116 > .stack_dbd263 {
-      transform: translateX(-16px);
-    }
-
     /* Servers container */
     .guilds_c48ade {
       -webkit-app-region: no-drag;
@@ -95,6 +90,11 @@ body {
       max-width: fit-content;
       overflow-x: auto;
       padding-left: 16px;
+      
+      /* Unread pill */
+      .unreadMentionsBar_ef3116 {
+        display: none;
+      }
 
       /* Remove discover servers */
       .scroller_ef3116 > .listItem__650eb:nth-last-child(2) {
@@ -109,9 +109,20 @@ body {
         column-gap: 16px !important;
         padding-bottom: 0;
 
-        /* Separator */
-        .guildSeparator__252b6 {
+        /* Separator between DMs and servers */
+        #guild-list-unread-dms:not(:has(.listItem__650eb)),
+        .listItem__650eb:has(.guildSeparator__252b6) {
           display: none;
+        }
+
+        /* DMs */
+        #guild-list-unread-dms {
+          align-items: center;
+
+          /* Unread pill */
+          .pill_ed9a5f {
+            transform: rotate(90deg) translate(-22px, -16px);
+          } 
         }
 
         /* Server */
@@ -239,70 +250,106 @@ body {
       .chatContent_f75fb0 {
         background-color: transparent;
 
-        /* First message of group, if a message is either tagged as such preceded by a divider */
-        .cozy_c19a55.groupStart__5126c,
-        div + li > .cozy_c19a55 {
-          margin-top: 10px;
-          padding-top: 8px;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
-        }
+        /* Above message input, under titlebar */
+        .messagesWrapper__36d07 {
 
-        /* Last message of group, followed by either a first message of a group or a divider */
-        :is(:has(+ li > .cozy_c19a55.groupStart__5126c), :has(+ div)) > .cozy_c19a55 {
-          border-bottom-left-radius: 12px;
-          border-bottom-right-radius: 12px;
-          padding-bottom: 10px;
-        }
-
-        /* Mentionned or replying to */
-        .cozy_c19a55:is(.mentioned__5126c, .replying__5126c) {
-          border-top-left-radius: 0 !important;
-          border-bottom-left-radius: 0 !important;
-        }
-
-        .message__5126c {
-          border-radius: 0;
-          background-color: var(--message);
-          transition: var(--transition-background);
-
-          /* Message accessories */
-          /* Attachments, embeds, linked message, reaction, add reaction */
-          .file__0ccae, .embedWrapper_b7e1cb, .container__9271d, .reaction__23977, .reactionBtn__23977  {
-            background-color: var(--tertiary-background);
+          /* New messages since */
+          .newMessagesBar__0f481 {
+            background-color: var(--accent);
+            left: 0;
           }
-        }
 
-        .message__5126c:hover {
-          background-color: var(--message-hover);
-        }
+          /* First message of group, if a message is either tagged as such preceded by a divider */
+          .cozy_c19a55.groupStart__5126c,
+          div + li > .cozy_c19a55 {
+            margin-top: 10px;
+            padding-top: 8px;
+            border-top-left-radius: 12px;
+            border-top-right-radius: 12px;
+          }
 
-        .message__5126c.mentioned__5126c {
-          background-color: var(--message-mentionned);
-        }
+          /* Last message of group, followed by either a first message of a group, a highlighted message or a divider */
+          :is(:has(+ li > .cozy_c19a55.groupStart__5126c), :has(+ .flash__03436 > li > .cozy_c19a55.groupStart__5126c), :has(+ .divider__5126c)) > .cozy_c19a55 {
+            border-bottom-left-radius: 12px;
+            border-bottom-right-radius: 12px;
+            padding-bottom: 10px;
 
-        .message__5126c.mentioned__5126c:hover {
-          background-color: var(--message-mentionned-hover);
-        }
+            /* Reactions */
+            .reactions__23977 {
+              padding-bottom: 0;
+            }
+          }
 
-        .message__5126c.replying__5126c {
-          background-color: var(--message-replying);
-        }
+          /* Mentionned or replying to */
+          .cozy_c19a55:is(.mentioned__5126c, .replying__5126c) {
+            border-top-left-radius: 0 !important;
+            border-bottom-left-radius: 0 !important;
+          }
 
-        .message__5126c.replying__5126c:hover {
-          background-color: var(--message-replying-hover);
-        }
+          .flash__03436[data-flash="true"] > li {
+            .message__5126c {
+              background-color: var(--message-mentionned-hover) !important;  
+            }
 
-        .message__5126c::before {
-          background-color: var(--accent);
-        }
+            .cozy_c19a55 {
+              border-color: var(--accent);
+            }
+          } 
+          
+          /* Highlighted message when clicking on replied message */
+          .flash__03436 {
+            background-color: transparent;
 
-        /* Divider */
-        .divider__5126c {
-          margin: 16px 0 16px 0;
+            .cozy_c19a55 {
+              border: 1px solid transparent;
+              border-bottom-left-radius: 12px;
+              border-bottom-right-radius: 12px;
+            }
+          }
 
-          .content__908e2 {
-            background-color: var(--secondary-background);
+          .message__5126c {
+            border-radius: 0;
+            background-color: var(--message);
+            transition: var(--transition-background);
+
+            /* Message accessories */
+            /* Attachments, embeds, linked message, reaction, add reaction */
+            .file__0ccae, .embedWrapper_b7e1cb, .container__9271d, .reaction__23977, .reactionBtn__23977 {
+              background-color: var(--tertiary-background);
+            }
+          }
+
+          .message__5126c:hover {
+            background-color: var(--message-hover);
+          }
+
+          .message__5126c.mentioned__5126c {
+            background-color: var(--message-mentionned);
+          }
+
+          .message__5126c.mentioned__5126c:hover {
+            background-color: var(--message-mentionned-hover);
+          }
+
+          .message__5126c.replying__5126c {
+            background-color: var(--message-replying);
+          }
+
+          .message__5126c.replying__5126c:hover {
+            background-color: var(--message-replying-hover);
+          }
+
+          .message__5126c::before {
+            background-color: var(--accent);
+          }
+
+          /* Divider */
+          .divider__5126c {
+            margin: 16px 0 16px 0;
+
+            .content__908e2 {
+              background-color: var(--secondary-background);
+            }
           }
         }
 
