@@ -38,6 +38,11 @@ body {
   font-family: var("Roboto");
 }
 
+/* Give a more native feel */
+div, a {
+  cursor: default !important;
+}
+
 /* Base view */
 .visual-refresh .base_c48ade {
   /* Titlebar without height */
@@ -61,6 +66,7 @@ body {
 
     .winButton_c38106 {
       width: 36px;
+      height: var(--server-bar-height);
     }
 
     /* New notifications, help, seperator */
@@ -145,11 +151,6 @@ body {
           }
         }
 
-        /* Move add server button */
-        .tutorialContainer__650eb {
-          transform: translateX(-16px);
-        }
-
         /* Server folder */
         .wrapper__48112 {
           display: flex;
@@ -172,10 +173,6 @@ body {
             width: fit-content;
             height: 48px !important;
             padding: 0;
-
-            .listItem__650eb {
-              margin: 0;
-            }
           }
         }
       }
@@ -268,8 +265,8 @@ body {
             border-top-right-radius: 12px;
           }
 
-          /* Last message of group, followed by either a first message of a group, a highlighted message or a divider */
-          :is(:has(+ li > .cozy_c19a55.groupStart__5126c), :has(+ .flash__03436 > li > .cozy_c19a55.groupStart__5126c), :has(+ .divider__5126c)) > .cozy_c19a55 {
+          /* Last message of group, followed by either a first message of a group, a highlighted message, a divider or last message of the conversation */
+          :is(:has(+ li > .cozy_c19a55.groupStart__5126c), :has(+ .flash__03436 > li > .cozy_c19a55.groupStart__5126c), :has(+ .divider__5126c), :has(+ .scrollerSpacer__36d07)) > .cozy_c19a55 {
             border-bottom-left-radius: 12px;
             border-bottom-right-radius: 12px;
             padding-bottom: 10px;
