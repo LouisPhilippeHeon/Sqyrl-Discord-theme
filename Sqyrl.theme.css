@@ -240,7 +240,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
     /* Everything to the left of the channels */
     .chat_f75fb0 {
       border: none;
-      background-color: var(--primary-background);
+      background-color: var(--secondary-background);
 
       /* Action bar */
       .subtitleContainer_f75fb0 {
@@ -249,6 +249,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
       /* Chat */
       .chatContent_f75fb0 {
+        padding-left: 16px;
         background-color: transparent;
 
         /* Above message input, under titlebar */
@@ -347,10 +348,6 @@ div:not(.sidebarResizeHandle_c48ade), a {
           /* Divider */
           .divider__5126c {
             margin: 16px 0 16px 0;
-
-            .content__908e2 {
-              background-color: var(--secondary-background);
-            }
           }
         }
 
@@ -365,7 +362,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
           }
 
           .scrollableContainer__74017 {
-            background-color: var(--secondary-background);
+            background-color: var(--primary-background);
           }
         }
       }
@@ -379,19 +376,24 @@ div:not(.sidebarResizeHandle_c48ade), a {
           background-color: var(--primary-background);
 
           .member__5d473 {
-            background-color: var(--secondary-background);
-            margin: 4px 2px 4px 2px;
+            background-color: var(--card);
+            margin: 4px 2px 4px 6px;
             
             .memberInner__5d473 {
-              padding: px 0 6px 2px;
+              padding: 4px 0px 4px 2px;
+
             }
+          }
+
+          .member__5d473:hover {
+            background-color: var(--card-hover);
           }
         }
       }
     }
 
     /* Friends */
-    .tabBody__133bf  {
+    .tabBody__133bf {
       background-color: var(--secondary-background);
 
       /* Friend */
