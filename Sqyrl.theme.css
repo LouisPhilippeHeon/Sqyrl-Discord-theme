@@ -152,15 +152,16 @@ div, a {
         }
 
         /* Server folder */
-        .wrapper__48112 {
+        .folderGroup__48112 {
           display: flex;
-          flex-direction: row;
+          width: fit-content;
+          align-items: center;
 
           /* Colored background */
-          .expandedFolderBackground__48112 {
-            width: 100%;
-            height: 40px;
-            top: 4px;
+          .folderGroupBackground__48112 {
+            width: calc(100% + 4px);
+            margin: 4px 0;
+            left: 0;
           }
 
           .folderIcon__48112 {
@@ -172,7 +173,7 @@ div, a {
             align-items: center;
             width: fit-content;
             height: 48px !important;
-            padding: 0;
+            margin-left: var(--space-xs);
           }
         }
       }
