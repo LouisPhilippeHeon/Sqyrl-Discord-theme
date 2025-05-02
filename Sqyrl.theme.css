@@ -15,8 +15,11 @@
   --secondary-background: #131519;
   --tertiary-background: #181b22;
   
-  --message: #1d2229;
-  --message-hover: #252b36;
+  --card: #1d2229;
+  --card-hover: #252b36;
+
+  --message: var(--card);
+  --message-hover: var(--card-hover);
   --message-replying: #03304A;
   --message-replying-hover: #05355A;
   --message-mentionned: #0A2735;
@@ -393,7 +396,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
       /* Friend */
       .peopleListItem_cc6179 {
-        background-color: var(--message);
+        background-color: var(--card);
         transition: var(--transition-background);
         margin: 0 4px 6px 20px;
         padding: 0 24px;
@@ -406,7 +409,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
       }
 
       .peopleListItem_cc6179:hover {
-        background-color: var(--message-hover);
+        background-color: var(--card-hover);
       }
 
       /* Now playing */
@@ -419,12 +422,12 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
           /* Card */
           .itemCard__7e549 {
-            background-color: var(--message);
+            background-color: var(--card);
             transition: var(--transition-background);
           }
 
           .itemCard__7e549:hover {
-            background-color: var(--message-hover);
+            background-color: var(--card-hover);
           }
         }
       }
