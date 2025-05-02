@@ -386,6 +386,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
           .member__5d473 {
             background-color: var(--card);
+            transition: var(--transition-background);
             margin: 4px 2px 4px 6px;
             
             .memberInner__5d473 {
