@@ -39,7 +39,7 @@ body {
 }
 
 /* Give a more native feel */
-div, a {
+div:not(.sidebarResizeHandle_c48ade), a {
   cursor: default !important;
 }
 
