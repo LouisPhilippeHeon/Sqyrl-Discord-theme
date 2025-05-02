@@ -388,10 +388,9 @@ div:not(.sidebarResizeHandle_c48ade), a {
     }
 
     /* Friends */
-    /* TODO rethink color choices */
     .tabBody__133bf  {
-      background-color: var(--primary-background);
-        
+      background-color: var(--secondary-background);
+
       /* Friend */
       .peopleListItem_cc6179 {
         background-color: var(--message);
@@ -408,6 +407,26 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
       .peopleListItem_cc6179:hover {
         background-color: var(--message-hover);
+      }
+
+      /* Now playing */
+      .container__7d20c {
+        background-color: var(--primary-background);
+
+        .scroller__7d20c {
+          border: none;
+          padding-bottom: 16px;
+
+          /* Card */
+          .itemCard__7e549 {
+            background-color: var(--message);
+            transition: var(--transition-background);
+          }
+
+          .itemCard__7e549:hover {
+            background-color: var(--message-hover);
+          }
+        }
       }
     }
   }
