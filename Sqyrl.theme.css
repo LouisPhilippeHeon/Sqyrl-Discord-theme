@@ -28,6 +28,22 @@
   --transition-background: background-color 0.2s linear;
 }
 
+/* Cutomisations specific to MacOS */
+.platform-osx {
+  .guilds_c48ade {
+    left: 80px;
+    width: calc(100vw - 96px) !important;
+  }
+
+  .sidebarList_c48ade {
+    -webkit-app-region: drag !important;
+
+    nav {
+      -webkit-app-region: no-drag;
+    }
+  }
+}
+
 /* Remove crap */
 .toolbar__9293f > .iconDisabled__9293f,
 .buttons__74017 > button:first-child,
