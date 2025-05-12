@@ -11,10 +11,31 @@
   --server-bar-height: 56px;
 
   --accent: #327391;
+
+  --transition-background: background-color 0.2s linear;
+}
+
+.theme-light {
+  --primary-background: #f7fafc;
+  --secondary-background: #edf2f7;
+  --tertiary-background: #e2e8f0;
+
+  --card: #e2e8f2;
+  --card-hover: #d3dfee;
+
+  --message: var(--card);
+  --message-hover: var(--card-hover);
+  --message-replying: #bad5e6;
+  --message-replying-hover: #afcee1;
+  --message-mentionned: #abc6d6;
+  --message-mentionned-hover: #9dbacb;
+}
+
+.theme-dark {
   --primary-background: #171A1F;
   --secondary-background: #131519;
   --tertiary-background: #181b22;
-  
+
   --card: #1d2229;
   --card-hover: #252b36;
 
@@ -24,8 +45,6 @@
   --message-replying-hover: #05355A;
   --message-mentionned: #0A2735;
   --message-mentionned-hover: #0B2C40;
-
-  --transition-background: background-color 0.2s linear;
 }
 
 /* Cutomisations specific to MacOS */
