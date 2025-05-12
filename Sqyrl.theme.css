@@ -30,11 +30,18 @@
 
 /* Cutomisations specific to MacOS */
 .platform-osx {
+  /* Space on the left for native MacOS buttons */
   .guilds_c48ade {
     left: 80px;
     width: calc(100vw - 96px) !important;
+
+    /* Add padding at the end of the list */
+    .tutorialContainer__650eb {
+       padding-right: var(--space-xs);
+    }
   }
 
+  /* Allow drag in the section where are the native MacOS buttons */
   .sidebarList_c48ade {
     -webkit-app-region: drag !important;
 
