@@ -10,9 +10,31 @@
 :root {
   --server-bar-height: 56px;
 
-  --accent: #327391;
+  --accent: #4990b1;
+  --accent-hover: #407f9c;
+  --accent-active: #376b83;
+
+  --accent-text: #87c1dc;
 
   --transition-background: background-color 0.2s linear;
+
+  /* Interactive text often uses theses variables */
+  --blurple-35: var(--accent-text); /* Tabs in the settings */
+  --brand-360: var(--accent-text); /* Show email in account settings */
+
+  --blurple-50: var(--accent); /* Checkboxes */
+}
+
+/* Apply to right click menus */
+:root, .menu_c1e9c4 {
+  --redesign-input-control-selected: var(--accent); 
+}
+
+/* Set the colors of the buttons, add friend button and popups */
+:root, .themed__9293f, .layer_da8173 {
+  --button-filled-brand-background: var(--accent);
+  --button-filled-brand-background-hover: var(--accent-hover);
+  --button-filled-brand-background-active: var(--accent-active);
 }
 
 .theme-light {
@@ -458,8 +480,14 @@ div:not(.sidebarResizeHandle_c48ade), a {
         }
       }
 
+      /* Content */
       .tabBody__133bf {
         background-color: var(--secondary-background);
+
+        /* Search bar */
+        .searchBar__5ec2f {
+          --text-link: var(--accent);
+        }
 
         /* Friend */
         .peopleListItem_cc6179 {
@@ -523,6 +551,29 @@ div:not(.sidebarResizeHandle_c48ade), a {
     .contentColumn__23e6b {
       margin: auto;
       max-width: 1000px;
+
+      /* Switch */
+      .container__87bf1 {
+        transition: var(--transition-background);
+      }
+
+      /* Enabled switch */
+      .container__87bf1.checked__87bf1 {
+        background-color: var(--accent) !important;
+
+        path {
+          fill: var(--accent);
+        }
+      }
+
+      /* Disabled switch */
+      .container__87bf1:not(.checked__87bf1) {
+        background-color: var(--neutral-45) !important;
+
+        path {
+          fill: var(--neutral-45);
+        }
+      }
     }
   }
 }
