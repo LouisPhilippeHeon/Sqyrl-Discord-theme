@@ -531,7 +531,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
   }
 }
 
-/* Parameters */
+/* Settings */
 .standardSidebarView__23e6b {
   margin-top: var(--server-bar-height);
 
@@ -552,6 +552,11 @@ div:not(.sidebarResizeHandle_c48ade), a {
     .contentColumn__23e6b, .customColumn__23e6b, .content_dbba93, .content__99f8c, .content__5906b {
       margin: auto;
       max-width: 1000px; 
+
+      /* Graphical component: tabs */
+      .tab_f8303a {
+        transition: color 0.2s linear;
+      }
 
       /* Members settings, but also selects server monetization, where padding is already 0  */
       .customColumn__23e6b > :not(.saveNoticeContainer__7796e) {
