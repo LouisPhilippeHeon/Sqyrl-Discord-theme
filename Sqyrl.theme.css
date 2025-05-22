@@ -56,7 +56,7 @@
 .theme-dark {
   --primary-background: #171A1F;
   --secondary-background: #131519;
-  --tertiary-background: #181b22;
+  --tertiary-background: #1d2027;
 
   --card: #1d2229;
   --card-hover: #252b36;
@@ -454,7 +454,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
             margin: 4px 2px 4px 6px;
 
             .memberInner__5d473 {
-              padding: 4px 0px 4px 2px;
+              padding: 4px 0 4px 2px;
             }
           }
 
@@ -544,13 +544,170 @@ div:not(.sidebarResizeHandle_c48ade), a {
     }
   }
 
-  /* Main content */
-  .contentRegionScroller__23e6b {
+  /* Main content scroller, main content of server members and invitations */
+  .contentRegionScroller__23e6b, .contentRegion__23e6b {
     background-color: var(--secondary-background);
 
-    .contentColumn__23e6b {
+    /* Main content, main content of members, main content of server profile, main content of roles, main content of logs */
+    .contentColumn__23e6b, .customColumn__23e6b, .content_dbba93, .content__99f8c, .content__5906b {
       margin: auto;
-      max-width: 1000px;
+      max-width: 1000px; 
+
+      /* Members settings, but also selects server monetization, where padding is already 0  */
+      .customColumn__23e6b > :not(.saveNoticeContainer__7796e) {
+        padding: 0;
+      }
+
+      /* Roles and invitations */
+      .customContainer__23e6b:not(.settingsContainer_b454a6) {
+        .contentRegionScroller__23e6b {
+          padding: 60px 40px 100px;
+
+          .content__99f8c  > div:first-of-type {
+            display: none;
+          }
+        }
+      }
+
+      /* Logs */
+      .content__5906b {
+        padding: 60px 40px 100px;
+
+        .customHeader__5906b {
+          padding-top: 0;
+        }
+      }
+
+      /* Banned */
+      .container_cdb2b0 {
+        width: inherit;
+        padding: 0;
+      }
+
+      /* Edit roles */
+      .page__91dc3 {
+        max-width: 100%;
+
+        /* Role selection menu */
+        .sidebar_e29cd7 {
+          position: sticky;
+          flex: none !important;
+          top: 0;
+          max-height: calc(100vh - var(--server-bar-height) - var(--space-xxl));
+          border: none;
+
+          .container_e29cd7 {
+            margin: 20px 20px 0 0;
+            border-radius: 12px;
+            border: none;
+            background-color: var(--primary-background);
+
+            /* Header */
+            .titleContainer_e29cd7 {
+              background-color: var(--tertiary-background);
+              border-top-left-radius: 12px;
+              border-top-right-radius: 12px;
+              margin: 0;
+              padding-top: var(--space-lg);
+            }
+
+            /* List of roles */
+            .list_e29cd7 {
+              padding: var(--space-sm);
+              
+              .row_e29cd7 {
+                margin-left: 0;
+              }
+            }
+
+            /* Remove space at bottom of list */
+            .list_e29cd7 > :last-child {
+              display: none;
+            }
+          }
+        }
+
+        /* Main content */
+        .contentContainer__91dc3 {
+          position: inherit; /* Moron dev put an absolute position on the main content instead of letting flex handle it */
+          width: 100%;
+
+          .scrollerBase_d125d2, .container__9a73f {
+            margin: 0;
+            padding-bottom: 0;
+            overflow: unset !important;
+            background-color: var(--primary-background);
+
+            /* Header */
+            .header_c6bf1b {
+              padding: 32px 16px 12px 16px;
+              background-color: var(--tertiary-background);
+              margin: 0 0 var(--space-md) 0;
+            }
+
+            > .contentWidth_c6bf1b {
+              padding: 0;
+              padding-bottom: var(--space-md);
+              width: 100%;
+              max-width: unset;
+              min-height: calc(100vh - var(--server-bar-height));
+            }
+
+            .container__8a529:last-child {
+              margin-bottom: 0;
+            }
+
+            /* Everything under the header */
+            .contentWidth_c6bf1b > :not(.header_c6bf1b) {
+              margin-left: var(--space-md);
+              margin-right: var(--space-md);
+              width: unset;
+            }
+          }
+
+          /* Manage members view */
+          .container__9a73f {
+            .headerContainer__9a73f {
+              position: sticky;
+              top: 0;
+              z-index: 1;
+
+              .contentWidth_c6bf1b {
+                max-width: unset;
+                width: 100%;
+                padding: 0;
+              }
+            }
+
+            /* List of members */
+            .list__9a73f {
+              overflow: unset !important;
+              padding-bottom: var(--space-md);
+
+              .content__99f8c {
+                height: fit-content !important;
+
+                /* Remove space at the top */
+                > :not(.contentWidth_c6bf1b) {
+                  display: none;
+                }
+
+                /* Member */
+                .contentWidth_c6bf1b {
+                  width: 100%;
+                  padding: 0;
+                  max-width: unset;
+                }
+              }
+            }
+          }
+
+          /* Remove space at bottom of list */
+          .scroller__981c8 > :last-child {
+            display: none;
+          }
+        }
+      }
 
       /* Switch */
       .container__87bf1 {
