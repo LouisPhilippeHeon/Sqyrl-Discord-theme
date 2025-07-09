@@ -181,6 +181,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
         height: var(--server-bar-height);
         column-gap: 16px !important;
         padding-bottom: 0;
+        padding-top: 0;
 
         /* Separator between DMs and servers */
         #guild-list-unread-dms:not(:has(.listItem__650eb)),
