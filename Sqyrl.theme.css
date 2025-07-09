@@ -208,12 +208,13 @@ div:not(.sidebarResizeHandle_c48ade), a {
           /* Pill indicating notification or current selection */
           .pill__1f388, .pill_e5445c {
             top: -6px;
-            width: 40px;
+            width: 100%;
             height: 2px;
             display: flex;
             justify-content: center;
 
             .item__58105 {
+              margin: 0;
               transform: rotate(0.25turn) !important;
             }
           }
