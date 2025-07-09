@@ -312,6 +312,41 @@ div:not(.sidebarResizeHandle_c48ade), a {
     /* Bar at the top of the messages */
     .title_f75fb0 {
       background-color: var(--primary-background);
+
+      /* Search bar container */
+      .search__49676 {
+        margin: 0;
+
+        /* Search bar */
+        .searchBar__97492 {
+          width: 100%;
+          display: flex;
+
+          /* Text input zone */
+          .DraftEditor-root {
+            transition: all 0.2s ease-out;
+            width: 200px;
+          }
+
+          /* Search icon */
+          .icon__97492 {
+            padding-top: 2px;
+            padding-right: 8px;
+          }
+        }
+
+        /* Closed search bar */
+        .search__97492:not(.open__97492) > .searchBar__97492 {
+          background-color: transparent;
+          border-color: transparent;
+
+          /* Text input zone */
+          .DraftEditor-root {
+            width: 0;
+            opacity: 0;
+          }
+        }
+      }
     }
 
     /* Everything to the left of the channels */
