@@ -207,7 +207,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
           /* Pill indicating notification or current selection */
           .pill__1f388, .pill_e5445c {
-            top: -6px;
+            top: -8px;
             width: 100%;
             height: 2px;
             display: flex;
@@ -233,8 +233,9 @@ div:not(.sidebarResizeHandle_c48ade), a {
             left: 0;
           }
 
-          .folderIcon__48112 {
-            margin: 0;
+          /* Notification pill */
+          .pill_e5445c {
+            top: -4px !important;
           }
 
           /* Items of the folder */
