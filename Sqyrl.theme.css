@@ -163,6 +163,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
       max-width: fit-content;
       overflow-x: auto;
       padding-left: 16px;
+      mask: none;
 
       /* Unread pill */
       .unreadMentionsBar_ef3116 {
