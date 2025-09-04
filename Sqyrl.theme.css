@@ -331,8 +331,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
           /* Search icon */
           .icon__97492 {
-            padding-top: 2px;
-            padding-right: 8px;
+            margin-right: 8px;
           }
         }
 
