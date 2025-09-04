@@ -22,16 +22,13 @@
   --blurple-35: var(--accent-text); /* Tabs in the settings */
   --brand-360: var(--accent-text); /* Show email in account settings */
 
-  --blurple-50: var(--accent); /* Checkboxes */
-}
-
-/* Apply to right click menus */
-:root, .menu_c1e9c4 {
-  --redesign-input-control-selected: var(--accent); 
+  --blurple-50: var(--accent); /* Checkboxes, buttons */
 }
 
 /* Set the colors of the buttons, add friend button and popups */
-:root, .themed__9293f, .layer_da8173 {
+:root, .themed__9293f, .layer_da8173, button {
+  --control-background-primary-hover: var(--accent-hover);
+  --control-background-primary-active: var(--accent-active);
   --button-filled-brand-background: var(--accent);
   --button-filled-brand-background-hover: var(--accent-hover);
   --button-filled-brand-background-active: var(--accent-active);
@@ -67,6 +64,7 @@
   --message-replying-hover: #05355A;
   --message-mentionned: #0A2735;
   --message-mentionned-hover: #0B2C40;
+
 }
 
 /* Cutomisations specific to MacOS */
