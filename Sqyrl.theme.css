@@ -23,6 +23,7 @@
   --brand-360: var(--accent-text); /* Show email in account settings */
 
   --blurple-50: var(--accent); /* Checkboxes, buttons */
+  --brand-500: var(--accent); /* Under tabs */
 }
 
 /* Switches in BetterDiscord settings */
@@ -69,7 +70,6 @@
   --message-replying-hover: #05355A;
   --message-mentionned: #0A2735;
   --message-mentionned-hover: #0B2C40;
-
 }
 
 /* Cutomisations specific to MacOS */
@@ -109,7 +109,7 @@ body {
 }
 
 /* Give a more native feel */
-div:not(.sidebarResizeHandle_c48ade), a {
+button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarResizeHandle_c48ade), [role="tab"], [role="menuitem"], [role="img"], [role="option"], [role="radio"], .input__87bf1, .shopCard_c3d04b, .tab__80679, .select__3f413, .clickable__29444, .link__2ea32, .basicChannelRowLink__2ea32, .header_f37cb1, .interactive_bf202d, .folderButtonInner__48112, .childContainer__91a9d, .avatar_c19a55, .button_f563df, .clickableUsername__63ed3 {
   cursor: default !important;
 }
 
@@ -121,7 +121,7 @@ div:not(.sidebarResizeHandle_c48ade), a {
 
 /* Title bar */
 .bar_c38106 {
-  background-color: var(--bg-base-tertiary);;
+  background-color: var(--bg-base-tertiary);
   height: var(--server-bar-height);
 
   /* Remove title */
