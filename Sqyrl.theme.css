@@ -204,7 +204,7 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
           /* Unread pill */
           .pill_ed9a5f {
             transform: rotate(90deg) translate(-22px, -16px);
-          } 
+          }
         }
 
         /* Server */
@@ -399,13 +399,13 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
 
           .flash__03436[data-flash="true"] > li {
             .message__5126c {
-              background-color: var(--message-mentionned-hover) !important;  
+              background-color: var(--message-mentionned-hover) !important;
             }
 
             .cozy_c19a55 {
               border-color: var(--accent);
             }
-          } 
+          }
 
           /* Highlighted message when clicking on replied message */
           .flash__03436 {
@@ -585,7 +585,7 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
     /* Main content, main content of members, main content of server profile, main content of roles, main content of logs */
     .contentColumn__23e6b, .customColumn__23e6b, .content_dbba93, .content__99f8c, .content__5906b {
       margin: auto;
-      max-width: 1000px; 
+      max-width: 1000px;
 
       /* Graphical component: tabs */
       .tab_f8303a {
