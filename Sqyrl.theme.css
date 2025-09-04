@@ -25,6 +25,11 @@
   --blurple-50: var(--accent); /* Checkboxes, buttons */
 }
 
+/* Switches in BetterDiscord settings */
+.bd-switch input:checked+.bd-switch-body {
+  --switch-color: var(--accent);
+}
+
 /* Set the colors of the buttons, add friend button and popups */
 :root, .themed__9293f, .layer_da8173, button {
   --control-background-primary-hover: var(--accent-hover);
