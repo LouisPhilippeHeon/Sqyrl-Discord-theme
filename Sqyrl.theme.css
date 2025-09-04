@@ -268,10 +268,10 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
 
       nav {
         background-color: var(--primary-background);
+        border-top: 1px solid var(--border-subtle);
 
         /* Search bar */
         .searchBar__35e86 {
-          border-top: 1px solid var(--border-subtle);
 
           /* Placeholder text */
           .contents__201d5 {
@@ -282,11 +282,6 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
         /* Channels, private messages */
         .scroller__629e4, .scroller__99e7c {
           background-color: var(--primary-background);
-        }
-
-        /* Header */
-        .container_f37cb1  {
-          border-top: 1px solid var(--border-subtle);
         }
 
         /* Remove boost */
@@ -358,12 +353,8 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
     /* Everything to the left of the channels */
     .chat_f75fb0 {
       border: none;
+      border-top: 1px solid var(--border-subtle);
       background-color: var(--secondary-background);
-
-      /* Action bar */
-      .subtitleContainer_f75fb0 {
-        border-top: 1px solid var(--border-subtle);
-      }
 
       /* Chat */
       .chatContent_f75fb0 {
@@ -511,11 +502,10 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
 
     /* Friends */
     .container__133bf {
-      border-top: none;
+      border-top: 1px solid var(--border-subtle);
 
       /* Action bar */
       .container__9293f {
-        border-top: 1px solid var(--border-subtle);
         background-color: var(--primary-background);
 
         /* Gradient at the end of items */
