@@ -147,8 +147,8 @@ div:not(.sidebarResizeHandle_c48ade), a {
   .sidebar_c48ade {
     overflow: visible;
 
-    /* Hide the scrollbar */
-    ::-webkit-scrollbar {
+    /* Hide the scrollbar of servers */
+    .guilds_c48ade::-webkit-scrollbar {
       display: none;
     }
 
@@ -273,7 +273,6 @@ div:not(.sidebarResizeHandle_c48ade), a {
         /* Channels, private messages */
         .scroller__629e4, .scroller__99e7c {
           background-color: var(--primary-background);
-          margin-right: 6px;
         }
 
         /* Header */
