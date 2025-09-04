@@ -113,7 +113,7 @@ body {
 }
 
 /* Give a more native feel */
-button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarResizeHandle_c48ade), [role="tab"], [role="menuitem"], [role="img"], [role="option"], [role="radio"], .input__87bf1, .shopCard_c3d04b, .tab__80679, .select__3f413, .clickable__29444, .link__2ea32, .basicChannelRowLink__2ea32, .header_f37cb1, .interactive_bf202d, .folderButtonInner__48112, .childContainer__91a9d, .avatar_c19a55, .button_f563df, .clickableUsername__63ed3 {
+button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarResizeHandle_c48ade), [role="tab"], [role="menuitem"], [role="img"], [role="option"], [role="radio"], .input__87bf1, .shopCard_c3d04b, .tab__80679, .select__3f413, .clickable__29444, .link__2ea32, .basicChannelRowLink__2ea32, .header_f37cb1, .interactive_bf202d, .folderButtonInner__48112, .childContainer__91a9d, .avatar_c19a55, .button_f563df, .clickableUsername__63ed3, .canCopy__37e49 {
   cursor: default !important;
 }
 
