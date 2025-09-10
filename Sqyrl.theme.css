@@ -518,27 +518,32 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
       .tabBody__133bf {
         background-color: var(--secondary-background);
 
-        /* Search bar */
-        .searchBar__5ec2f {
-          --text-link: var(--accent);
-        }
+        /* Friends list and search bar */
+        .peopleList__5ec2f {
+          flex-grow: 1;
 
-        /* Friend */
-        .peopleListItem_cc6179 {
-          background-color: var(--card);
-          transition: var(--transition-background);
-          margin: 0 4px 6px 20px;
-          padding: 0 24px;
-          border-radius: 12px;
-          border: none;
+          /* Friends list */
+          .content__99f8c {
+            min-height: max-content;
 
-          .avatar__0a06e {
-            margin: auto 12px auto 0;
+            /* Friend */
+            .peopleListItem_cc6179 {
+              background-color: var(--card);
+              transition: var(--transition-background);
+              margin: 0 4px 6px 20px;
+              padding: 0 24px;
+              border-radius: 12px;
+              border: none;
+
+              .avatar__0a06e {
+                margin: auto 12px auto 0;
+              }
+            }
+
+            .peopleListItem_cc6179:hover {
+              background-color: var(--card-hover);
+            }
           }
-        }
-
-        .peopleListItem_cc6179:hover {
-          background-color: var(--card-hover);
         }
 
         /* Now playing */
