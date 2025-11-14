@@ -79,7 +79,7 @@
 /* Cutomisations specific to MacOS */
 .platform-osx {
   /* Space on the left for native MacOS buttons */
-  .guilds_c48ade {
+  .guilds__5e434 {
     left: 80px;
     width: calc(100vw - 96px) !important;
 
@@ -90,7 +90,7 @@
   }
 
   /* Allow drag in the section where are the native MacOS buttons */
-  .sidebarList_c48ade {
+  .sidebarList__5e434 {
     -webkit-app-region: drag !important;
 
     nav {
@@ -113,12 +113,12 @@ body {
 }
 
 /* Give a more native feel */
-button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarResizeHandle_c48ade), [role="tab"], [role="menuitem"], [role="img"], [role="option"], [role="radio"], .input__87bf1, .shopCard_c3d04b, .tab__80679, .select__3f413, .clickable__29444, .link__2ea32, .basicChannelRowLink__2ea32, .header_f37cb1, .interactive_bf202d, .folderButtonInner__48112, .childContainer__91a9d, .avatar_c19a55, .button_f563df, .clickableUsername__63ed3, .canCopy__37e49 {
+button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarResizeHandle__5e434), [role="tab"], [role="menuitem"], [role="img"], [role="option"], [role="radio"], .input__87bf1, .shopCard_c3d04b, .tab__80679, .select__3f413, .clickable__29444, .link__2ea32, .basicChannelRowLink__2ea32, .header_f37cb1, .interactive_bf202d, .folderButtonInner__48112, .childContainer__91a9d, .avatar_c19a55, .button_f563df, .clickableUsername__63ed3, .canCopy__37e49 {
   cursor: default !important;
 }
 
 /* Base view */
-.visual-refresh .base_c48ade {
+.visual-refresh .base__5e434 {
   /* Titlebar without height */
   grid-template-rows: [top] 0 [titleBarEnd] min-content [noticeEnd] 1fr [end];
 }
@@ -151,18 +151,18 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
 }
 
 /* App */
-.content_c48ade {
+.content__5e434 {
   /* Servers and channels */
-  .sidebar_c48ade {
+  .sidebar__5e434 {
     overflow: visible;
 
     /* Hide the scrollbar of servers */
-    .guilds_c48ade::-webkit-scrollbar {
+    .guilds__5e434::-webkit-scrollbar {
       display: none;
     }
 
     /* Servers container */
-    .guilds_c48ade {
+    .guilds__5e434 {
       -webkit-app-region: no-drag;
       position: absolute;
       z-index: 1;
@@ -258,7 +258,7 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
     }
 
     /* Channels and convos */
-    .sidebarList_c48ade {
+    .sidebarList__5e434 {
       -webkit-app-region: no-drag;
       overflow: visible;
       position: relative;
@@ -270,44 +270,35 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
         background-color: var(--primary-background);
         border-top: 1px solid var(--border-subtle);
 
-        /* Search bar */
-        .searchBar__35e86 {
-
-          /* Placeholder text */
-          .contents__201d5 {
-            font-size: 13px;
-          }
-        }
-
         /* Channels, private messages */
         .scroller__629e4, .scroller__99e7c {
           background-color: var(--primary-background);
         }
 
         /* Remove boost */
-        .container_eff079 {
+        .container__0d0f9 {
           display: none;
         }
       }
     }
 
     /* Resize bar */
-    .sidebarResizeHandle_c48ade {
+    .sidebarResizeHandle__5e434 {
       margin-top: var(--server-bar-height);
     }
 
     /* Profile */
-    .panels_c48ade {
+    .panels__5e434 {
       background-color: var(--secondary-background);
     }
   }
 
-  .sidebar_c48ade::after {
+  .sidebar__5e434::after {
     display: none;
   }
 
   /* Main page */
-  .page_c48ade {
+  .page__5e434 {
     top: var(--server-bar-height);
     height: calc(100vh - var(--server-bar-height));
 
@@ -523,7 +514,7 @@ button, a, [role="listitem"], [role="treeitem"], [role="button"]:not(.sidebarRes
           flex-grow: 1;
 
           /* Friends list */
-          .content__99f8c {
+          .content_d125d2 {
             min-height: max-content;
 
             /* Friend */
