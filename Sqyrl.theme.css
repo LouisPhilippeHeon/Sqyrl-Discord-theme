@@ -306,6 +306,11 @@ button, a, [type="checkbox"], [data-toggleable-component="switch"], [role="listi
     .title_f75fb0 {
       background-color: var(--primary-background);
 
+      /* Remove gradient */
+      .children__9293f::after {
+        display: none;
+      }
+
       /* Search bar container */
       .search__49676 {
         margin: 0;
@@ -498,11 +503,6 @@ button, a, [type="checkbox"], [data-toggleable-component="switch"], [role="listi
       /* Action bar */
       .container__9293f {
         background-color: var(--primary-background);
-
-        /* Gradient at the end of items */
-        .children__9293f::after {
-          display: none;
-        }
       }
 
       /* Content */
